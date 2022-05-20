@@ -1,0 +1,28 @@
+{
+  "name": "shollie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "css-build": "node-sass sass/main.scss css/main.css",
+    "css-watch": "npm run css-build --watch",
+    "start": "npm run css-watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shantandollie/shantandollie.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shantandollie/shantandollie.github.io/issues"
+  },
+  "homepage": "https://github.com/shantandollie/shantandollie.github.io#readme",
+  "devDependencies": {
+    "bulma": "^0.9.3",
+    "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4"
+  }
+}
