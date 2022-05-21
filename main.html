@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>Shanta and Ollie Wedding!</title>
+
+        <link rel="stylesheet" href="css/main.css">
+        <script defer src="fonts/fontawesome-free/js/brands.js"></script>
+        <script defer src="fonts/fontawesome-free/js/solid.js"></script>
+        <script defer src="fonts/fontawesome-free/js/fontawesome.js"></script>
+
+        <script>
+            // Set the date we're counting down to
+
+            // Days in jan, feb, march, april, may, june
+            var_months = [31, 28, 31, 30, 31, 30]
+
+            var target_day = 24 
+            var target_month = 6 // June
+
+            var countDownDate = new Date("June 24, 2022 00:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+
+                // Get today's date and time
+                var cur_date = new Date()
+
+                var midnight = new Date();
+                midnight.setHours(24,0,0,0); // next midnight
+
+                var now = cur_date.getTime(); //milliseconds from epoch
+                var cur_month = cur_date.getMonth(); //jan is zero
+                cur_month = cur_month + 1;
+                var cur_day = cur_date.getDate(); // get day of the month between 1 and 31
+
+                // Find the distance between now and the count down date
+                var distance_to_wedding = countDownDate - now; //diff in milliseconds
+                var distance_to_midnight = midnight - now; //diff in milliseconds
+
+
+                // Time calculations for days, hours, minutes and seconds
+                var months = target_month - cur_month
+
+                // number of days left in june from current day to the 24th
+                var days = target_day-cur_day;
+
+                // number of hours left till midnight
+                var num_hours = Math.floor(distance_to_midnight / (1000 * 60 * 60))
+                var num_mins = (distance_to_midnight - num_hours * 1000 * 60 * 60)/(60*1000)
+                var hours = Math.floor(num_hours);
+                var minutes = Math.floor(num_mins);
+                var seconds = Math.floor((distance_to_midnight % (1000 * 60)) / 1000);
+
+                document.getElementById("countdown").innerHTML = months + " Month " +  days + " Days " + hours + " Hours " + minutes + "m " + seconds + "s ";
+
+                // If the count down is finished, write some text
+                if (distance_to_wedding < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
+    </head>
+
+    <body>
+
+        <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+          <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+              <a class="navbar-item" href="#home">
+                Home
+              </a>
+
+              <a class="navbar-item" href="#photos">
+                Photos
+              </a>
+
+              <a class="navbar-item" href="#ceremony">
+                Venue and Ceremony
+              </a>
+
+              <a class="navbar-item", href="#gifts">
+                Gifts and Donations!
+              </a>
+
+              <a class="navbar-item" href="#contact">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <section class="hero is-fullheight-with-navbar" id="home">
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-one-thirds">
+                            <figure class="image is-square">
+                                <img src="images/olive_branch_1.jpg" alt="Olive Branch" width="200" height="200" style="opacity:0.9;">
+                            </figure>
+                        </div>
+                        <div class="column is-two-thirds">
+                            <div class="container has-text-centered">
+                                <p class="title has-text-sage">
+                                    Shanta and Ollie's Wedding Website!
+                                </p>
+                                <p> </p>
+                                <p class="subtitle has-text-sage">
+                                    Aphrodite Hills, Cyprus
+                                </p>
+                                <p class="subtitle has-text-sage">
+                                    24th June 2022
+                                </p>
+
+                                <p class="subtitle has-text-sage" id="countdown">
+                                    .
+                                </p>
+                            </div>
+                        </div>
+                        <div class="column is-one-thirds">
+                            <figure class="image is-square">
+                                <img src="images/olive_branch_2.jpg" alt="Olive Branch"  width="200" height="200" style="opacity:0.9;">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section pt-1 pb-1" id="photos">
+            <div class="container has-text-centered">
+                <div class="columns container">
+                    <div class="column is-one-quater">
+                        <figure class="image is-5by4">
+                            <img src="images/image2.jpeg" alt="Olive Branch">
+                        </figure>
+                    </div>
+
+                    <div class="column is-one-quater">
+                        <figure class="image is-5by4">
+                            <img src="images/image3.jpeg" alt="Olive Branch">
+                        </figure>
+                    </div>
+
+                    <div class="column is-one-quater">
+                        <figure class="image is-5by4">
+                            <img src="images/image1.jpeg" alt="Olive Branch">
+                        </figure>
+                    </div>
+
+                    <div class="column is-one-quater">
+                        <figure class="image is-5by4">
+                            <img src="images/image4.jpeg" alt="Olive Branch">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero is-fullheight-with-navbar" id="ceremony">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p class="title has-text-sage">
+                        Venue and Ceremony
+                    </p>
+                    <div class="columns is-vcentered">
+                        <div class="column is-half">
+                            <iframe width="600" height="450" style="border:0" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJfW1WAfYb5xQRsppVqNRzbgw&key=AIzaSyBO82aWbzFS6cqWpJwk_5YhlANDJ3jIifY"></iframe> 
+                        </div>
+                        <div class="column has-text-centered">
+                            <p class="text">
+
+                                We are getting married outside St Catherine's Chapel on the Aphrodite Hills resort. In June temperatures in Cyprus can reach 30&#8451; so we want everyone to be cool and comfortable in smart-casual wear, no jackets needed but no shorts either! 
+
+                                <br>
+                                <br>
+
+                                Please join us at the Anoi Pub &#38; Grill at 4pm and we will head over to the chapel together for the ceremony at 5pm. There will be cocktails &#38; canapés served in the Village Square afterwards, followed by cake, meze and music from 8pm onwards in the Secret Garden! 
+
+                                <br>
+                                <br>
+
+                                💃🕺
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero is-halfheight-with-navbar" id="gifts">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p>
+                        <span class="icon-text">
+                            Honeymoon Fund:
+                        </span>
+                    </p>
+                    <p>
+                        <form action="https://www.paypal.com/donate" method="post" target="_top">
+                            <input type="hidden" name="hosted_button_id" value="VHBJKWLJE7D6Y" />
+                            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                            <img alt="" border="0" src="https://www.paypal.com/en_GB/i/scr/pixel.gif" width="1" height="1" />
+                        </form>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero is-halfheight-with-navbar" id="contact">
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <p>
+                        <span class="icon-text">
+                            <span class="icon">
+                              <i class="fas fa-envelope-square"></i>
+                            </span> 
+                            <span>Email: shantandollie@gmail.com</span>
+                        </span>
+                    </p>
+                    <p>
+                        <span class="icon-text">
+                            <span class="icon">
+                              <i class="fas fa-phone-square"></i>
+                            </span> 
+                            <span>Phone: 07793927247 (Shant), 07881221497 (Ollie)</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
