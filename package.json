@@ -20,7 +20,8 @@
   "homepage": "https://github.com/shantandollie/shantandollie.github.io#readme",
   "devDependencies": {
     "bulma": "^0.9.3",
-    "node-sass": "^7.0.1"
+    "node-sass": "^7.0.1",
+    "pagecrypt": "^5.4.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4"
